@@ -1,0 +1,11 @@
+{
+  "name": "canvas-video",
+  "version": "1.0.0",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "watch": "./node_modules/.bin/tsc --watch",
+    "tsc": "./node_modules/.bin/tsc"
+  }
+}

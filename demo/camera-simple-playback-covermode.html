@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="_width=device-_width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>Demo: Simple Playback (covermode)</title>
+        <script type="importmap">
+            {
+              "imports": {
+                "../canvasvideoevent": "../canvasvideoevent.js",
+                "../canvasvideo": "../canvasvideo.js"
+              }
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+
+        <style>
+            canvas-video#a {
+                width: 400px;
+                height: 200px;
+            }
+
+            canvas-video#b {
+                width: 200px;
+                height: 400px;
+            }
+
+            canvas-video#c {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Demo: Play a video</h2>
+        <p>
+            play the camera feed, fill and crop to allotted space (no letterboxing)
+        </p>
+        <canvas-video id="a" useCamera videoScaleMode="cover"></canvas-video>
+        <canvas-video id="b" useCamera videoScaleMode="cover"></canvas-video>
+        <canvas-video id="c" useCamera videoScaleMode="cover"></canvas-video>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas-Video Demos</title>
+</head>
+<body>
+<h1>&lt;canvas-video&gt;</h1>
+<p>
+    A Web Component that plays video or your webcam and blits it to a canvas in a number of ways.
+    Also gives getter/setter access to the canvas context, as well as events out frame data as it refreshes.
+</p>
+<ul>
+    <li>
+        <h3>Simple Playback</h3>
+        <p>
+            Just play a video or use your webcam. If this all you want to do, you may as well use the video tag
+        </p>
+        <a target="_blank" href="demo/camera-simple-playback.html">camera demo</a> /
+        <a target="_blank" href="demo/video-simple-playback.html">video demo</a>
+    </li>
+
+    <li>
+        <h3>Simple Playback (covermode)</h3>
+        <p>
+            play a video, fill and crop to allotted space (no letterboxing)
+        </p>
+        <a target="_blank" href="demo/camera-simple-playback-covermode.html">camera demo</a> /
+        <a target="_blank" href="demo/video-simple-playback-covermode.html">video demo</a>
+    </li>
+
+    <li>
+        <h3>Render to internal canvas</h3>
+        <p>
+            Here we're watching not the actual camera/video feed but the canvas. We've set the refresh interval to 250ms to make it super obvious
+        </p>
+        <a target="_blank" href="demo/camera-render-to-internal-canvas.html">camera demo</a> /
+        <a target="_blank" href="demo/video-render-to-internal-canvas.html">video demo</a>
+    </li>
+
+    <li>
+        <h3>Scale Canvas</h3>
+        <p>
+            Use the internal canvas for display, but also scale. Kinda looks bad and useless, but scaling the canvas could be a useful feature elsewhere
+        </p>
+        <a target="_blank" href="demo/camera-scale-canvas.html">camera demo</a> /
+        <a target="_blank" href="demo/video-scale-canvas.html">video demo</a>
+    </li>
+
+    <li>
+        <h3>Scale and Copy to Canvas</h3>
+        <p>
+            Use the frame data event to trigger drawing to another canvas, scaling the output
+        </p>
+        <a target="_blank" href="demo/camera-scale-and-copy-to-canvas.html">camera demo</a> /
+        <a target="_blank" href="demo/video-scale-and-copy-to-canvas.html">video demo</a>
+    </li>
+
+    <li>
+        <h3>Steal Internal Canvas</h3>
+        <p>
+            Instead of multiple canvas drawing, steal the video player's internal canvas context for ourselves outside of the component. Be sure you aren't using "useCanvasForDisplay" or the video element will be hidden
+        </p>
+        <a target="_blank" href="demo/camera-steal-internal-canvas.html">camera demo</a> /
+        <a target="_blank" href="demo/video-steal-internal-canvas.html">video demo</a>
+    </li>
+</ul>
+</body>
+</html>

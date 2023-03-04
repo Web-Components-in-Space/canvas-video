@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="_width=device-_width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>Demo: Scale Canvas</title>
+        <script type="importmap">
+            {
+              "imports": {
+                "../canvasvideoevent": "../canvasvideoevent.js",
+                "../canvasvideo": "../canvasvideo.js"
+              }
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+
+        <style>
+            canvas-video {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Demo: Scale canvas</h2>
+        <p>
+            Use the internal canvas for display, but also scale. Kinda looks bad and useless, but scaling the canvas could be a useful feature elsewhere
+        </p>
+        <canvas-video
+                src="SampleVideo_360x240_1mb.mp4"
+                canvasScale=".5"
+                useCanvasForDisplay
+                canvasRefreshInterval="100">
+        </canvas-video>
+    </body>
+</html>

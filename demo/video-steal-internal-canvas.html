@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="_width=device-_width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>Demo: Steal Internal Canvas</title>
+        <script type="importmap">
+            {
+              "imports": {
+                "../canvasvideoevent": "../canvasvideoevent.js",
+                "../canvasvideo": "../canvasvideo.js"
+              }
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+        <style>
+            canvas-video {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Demo: Steal Internal Canvas</h2>
+        <p>
+            Instead of multiple canvas drawing, steal the video player's internal canvas context for ourselves outside of the component. Be sure you aren't using "useCanvasForDisplay" or the video element will be hidden
+        </p>
+        <canvas-video
+                src="SampleVideo_360x240_1mb.mp4"
+                canvasRefreshInterval="100"
+                frameDataMode="imagedata">
+        </canvas-video>
+
+        <canvas id="target"></canvas>
+    </body>
+
+    <script>
+        var mycanvas = document.querySelector('canvas#target');
+        var videoplayer = document.querySelector('canvas-video');
+        document.querySelector('canvas-video').addEventListener('ready', function(event) {
+            // size canvas before getting context, otherwise it'll blow up the pixels weird
+            mycanvas.width = 300;
+            mycanvas.height = 300;
+            videoplayer.canvasContext = mycanvas.getContext('2d');
+        });
+    </script>
+</html>

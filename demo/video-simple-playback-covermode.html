@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="_width=device-_width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>Demo: Simple Playback (covermode)</title>
+        <script type="importmap">
+            {
+              "imports": {
+                "../canvasvideoevent": "../canvasvideoevent.js",
+                "../canvasvideo": "../canvasvideo.js"
+              }
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+
+        <style>
+            canvas-video#a {
+                width: 400px;
+                height: 200px;
+            }
+
+            canvas-video#b {
+                width: 200px;
+                height: 400px;
+            }
+
+            canvas-video#c {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Demo: Play a video</h2>
+        <p>
+            play a video, fill and crop to allotted space (no letterboxing)
+            also...find a different source - letterboxing is baked into video, so it's deceptive
+        </p>
+        <canvas-video id="a" src="SampleVideo_360x240_1mb.mp4" videoScaleMode="cover"></canvas-video>
+        <canvas-video id="b" src="SampleVideo_360x240_1mb.mp4" videoScaleMode="cover"></canvas-video>
+        <canvas-video id="c" src="SampleVideo_360x240_1mb.mp4" videoScaleMode="cover"></canvas-video>
+    </body>
+</html>

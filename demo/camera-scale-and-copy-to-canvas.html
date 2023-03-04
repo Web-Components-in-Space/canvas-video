@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="_width=device-_width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>Demo: Scale and Copy to Canvas</title>
+        <script type="importmap">
+            {
+              "imports": {
+                "../canvasvideoevent": "../canvasvideoevent.js",
+                "../canvasvideo": "../canvasvideo.js"
+              }
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+
+        <style>
+            canvas-video {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Demo: Scale and Copy to Canvas (using camera feed)</h2>
+        <p>
+            Use the frame data event to trigger drawing to another canvas, scaling the output
+        </p>
+        <canvas-video
+                useCamera
+                canvasScale=".5"
+                frameDataMode="imagedata"
+                canvasRefreshInterval="100">
+        </canvas-video>
+
+        <canvas id="target"></canvas>
+    </body>
+
+    <script>
+        var ctx = document.querySelector('canvas#target').getContext('2d');
+        document.querySelector('canvas-video').addEventListener('frameupdate', function(event) {
+            ctx.canvas.width = event.target.width;
+            ctx.canvas.height = event.target.height;
+            ctx.putImageData(event.framedata, 0, 0);
+        });
+    </script>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="_width=device-_width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>Demo: Use Internal Canvas for Display of Camera</title>
+
+        <script type="importmap">
+            {
+              "imports": {
+                "../canvasvideoevent": "../canvasvideoevent.js",
+                "../canvasvideo": "../canvasvideo.js"
+              }
+            }
+        </script>
+        <script type="module" src="../index.js"></script>
+
+        <style>
+            canvas-video {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Demo: Use Internal Canvas for Display (using camera feed)</h2>
+        <p>
+            Here we're watching not the actual camera feed but the canvas. We've set the refresh interval to 250ms to make it super obvious
+        </p>
+        <canvas-video
+                useCamera
+                canvasRefreshInterval="250"
+                useCanvasForDisplay>
+        </canvas-video>
+    </body>
+</html>
